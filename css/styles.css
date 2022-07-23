@@ -134,6 +134,28 @@ img {
     color: var(--primary-txt-cl);
 }
 
+.header-link-bottom {
+    position: relative;
+}
+
+.header-link-bottom::after {
+    position: absolute;
+    content: '';
+    bottom: -1px;
+    display: block;
+    background-color: #188ce8;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    transform: scaleX(0);
+    transition: transform 250ms var(--cubic);
+}
+
+.header-link-bottom:hover::after,
+.header-link-bottom:focus::after {
+    transform: scaleX(1);
+}
+
 .header-contacts {
     margin-left: auto;
     color: var(--secondary-txt-cl);
@@ -163,6 +185,20 @@ img {
 .header-link-current {
     color: var(--accent-cl);
 }
+
+.header-link-current::after {
+    position: absolute;
+    content: '';
+    bottom: -1px;
+    display: block;
+    background-color: #188ce8;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    transform: scaleX(1);
+}
+
+
 
 /* header icons */
 
@@ -320,6 +356,33 @@ img {
 
 }
 
+.work-item {
+position: relative;
+
+}
+.work-overlay {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 0;
+        width: 370px;
+        height: 70px;
+        background-color: rgba(47, 48, 58, 0.8);
+
+}
+
+
+.work-overlay-text {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: calc(16 / 14);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+
+
+}
 
 /* Team-section */
 
