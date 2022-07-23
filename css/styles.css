@@ -132,6 +132,7 @@ img {
     padding-top: 32px;
     padding-bottom: 32px;
     color: var(--primary-txt-cl);
+    transition: color 250ms var(--cubic);
 }
 
 .header-link-bottom {
@@ -168,6 +169,7 @@ img {
     padding-top: 32px;
     padding-bottom: 32px;
     color: #757575;
+    transition: color 250ms var(--cubic);
 
 }
 
@@ -205,6 +207,7 @@ img {
 .header-icon {
     margin-right: 10px;
     fill: currentColor;
+    transition: color 250ms var(--cubic);
 }
 
 .header-icon:hover,
@@ -283,6 +286,7 @@ img {
     background-color: var(--accent-cl);
     border: 1px solid transparent;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    transition: background-color 250ms var(--cubic);
 
 
 }
@@ -476,6 +480,7 @@ position: relative;
 
 .address-link {
     color: rgba(255, 255, 255, 0.6);
+    transition: color 250ms var(--cubic);
 }
 
 .footer-title {
@@ -512,6 +517,7 @@ position: relative;
     color: var(--primary-txt-cl);
     background-color: var(--light-bg-cl);
     border: none;
+    transition: color 250ms var(--cubic), background-color 250ms var(--cubic), box-shadow 250ms var(--cubic);
 }
 
 .portfolio-btn:hover,
@@ -569,8 +575,7 @@ position: relative;
 
 .projects-overlay-text {
     padding: 63px 24px;
-
-    
+   
     font-weight: 400;
     font-size: 18px;
     line-height: calc(28 / 18);
@@ -651,6 +656,7 @@ position: relative;
     color: #AFB1B8;
     background-color: #ffffff;
     border-radius: 50%;
+    transition: color 250ms var(--cubic), background-color 250ms var(--cubic);
 
 }
 
@@ -684,6 +690,8 @@ position: relative;
     height: 92px;
     border: 1px solid #AFB1B8;
     border-radius: 4px;
+    transition: color 250ms var(--cubic), border-color 250ms var(--cubic);
+    
 
 }
 
@@ -711,6 +719,7 @@ position: relative;
 .footer-socials-link {
     color: #ffffff;
     background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 250ms var(--cubic)
 
 
 }
@@ -720,3 +729,71 @@ position: relative;
 
     background-color: #2196F3;
 }
+
+/* Modal */
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 50;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: initial;
+    transition: opacity 250ms var(--cubic), 
+    visibility 250ms var(--cubic);
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    visibility:hidden;
+}
+
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    min-width: 528px;
+    min-height: 581px;
+    padding: 8px;
+    z-index: 100;
+    
+    background-color: #FFFFFF;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 
+    0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    
+    opacity: 1;
+    
+    transition: transform 250ms var(--cubic), 
+    opacity 250ms var(--cubic);
+}
+
+.backdrop.is-hidden .modal {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+
+    
+}
+.button-close-modal {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #FFFFFF;
+    cursor: pointer;
+}
+
