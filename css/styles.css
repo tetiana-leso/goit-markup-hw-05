@@ -152,10 +152,10 @@ img {
     transition: transform 250ms var(--cubic);
 }
 
-.header-link-bottom:hover::after,
+/* .header-link-bottom:hover::after,
 .header-link-bottom:focus::after {
     transform: scaleX(1);
-}
+} */
 
 .header-contacts {
     margin-left: auto;
